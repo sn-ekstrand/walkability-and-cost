@@ -2,7 +2,8 @@ from pymongo import MongoClient
 
 client = MongoClient('localhost', 27017)
 db = client['apartments_com']
-table = db['austin_apartments']
+austin_apts_table = db['austin_apartments']
+apts_pages_table = db['apartment_pages']
 
 # Import BeautifulSoup
 import pandas as pd
@@ -15,41 +16,34 @@ from pymongo import MongoClient
 import pprint
 
 
-
 # borrowed and adapted code from Chuanxiu Xiong
 # https://github.com/chuanxiuXiong/apartments.com-scraper/blob/master/scraper.py
 request_header = {
-#         'Accept': "application/json, text/javascript, */*; q=0.01",
-#         'Accept-Encoding': "gzip, deflate, br",
-#         'Accept-Language': "en-US, en; q=0.8, zh-Hans-CN; q=0.5, zh-Hans; q=0.3",
-#         'Cache-Control': "no-cache",
-#         'Content-Type': "application/json",
-#         'Host': "www.apartments.com",
-#         'Origin': "https://www.apartments.com",
-#         'Referer': "https://www.apartments.com/",
-        'User-Agent': "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134",
-#         'X-Requested-With': "XMLHttpRequest",
-        }
+    'User-Agent': "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134",
+    }
 
-## Iterate through all pages for a city
+# Iterate through all pages for a city
+# The max number of pages appears to always be 28
 for page in range(28):
     base_url = "https://www.apartments.com/austin-tx/{}/".format(page+1)
     r = requests.get(base_url, headers=request_header)
-    page_status = r.status_code
+    
+    # save to mongodb
+    austin_apts_table.insert_one({'page_number': page, 'url': base_url, 'html': r.text})
 
-# save to mongodb?
-
-
-    soup = BeautifulSoup(r.text, 'html.parser')
+    time.sleep(10)
 
     # grab just the html for the specific apartments on the page
-    placards = soup.find_all('article', 'diamond placard')
-
-    # grab the html text for each apartment on a page
+    soup = BeautifulSoup(r.text, 'html.parser')
+    placards = soup.find_all('article', 'placard')
     for apt in len(placards):
         tag = placards[apt]
-        link = tag['data-url'] 
-        sub_page = requests.get(link, headers=request_header)
-        sub_soup = BeautifulSoup(sub_page.text, 'html.parser')
+        sub_page_url = tag['data-url'] 
+        listing_id = tag['data-listingid']
+        sub_page_html = requests.get(sub_page_url, headers=request_header)
 
-        # append html to MongoDB
+        # append sub page html to MongoDB
+        apts_pages_table.insert_one({'listing_id': listing_id, 'url': sub_page_url, 'html': sub_page_html.text})
+
+        time.sleep(10)
+
