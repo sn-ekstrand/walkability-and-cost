@@ -36,8 +36,8 @@ for page in range(28):
     # grab just the html for the specific apartments on the page
     soup = BeautifulSoup(r.text, 'html.parser')
     placards = soup.find_all('article', 'placard')
-    for apt in len(placards):
-        tag = placards[apt]
+    for idx, apt in enumerate(placards):
+        tag = placards[idx]
         sub_page_url = tag['data-url'] 
         listing_id = tag['data-listingid']
         sub_page_html = requests.get(sub_page_url, headers=request_header)
