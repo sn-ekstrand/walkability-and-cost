@@ -30,7 +30,7 @@ for city in cities:
     for page in range(28):
         base_url = "https://www.apartments.com/{}/{}/".format(city, page+1)
         r = requests.get(base_url, headers=request_header)
-        time.sleep(np.rand.int(18, 33))
+        time.sleep(np.random.randint(18, 33))
 
         # save to mongodb
         city_pages_table.insert_one({'city': city, 'page_number': (page+1), 'url': base_url, 'html': r.text})
@@ -43,7 +43,7 @@ for city in cities:
             sub_page_url = tag['data-url'] 
             listing_id = tag['data-listingid']
             sub_page_html = requests.get(sub_page_url, headers=request_header)
-            time.sleep(np.rand.int(18, 33))
+            time.sleep(np.random.randint(18, 33))
 
             # append sub page html to MongoDB
             ind_apts_table.insert_one({'city': city, 'listing_id': listing_id, 'url': sub_page_url, 'html': sub_page_html.text})
