@@ -1,11 +1,3 @@
-from pymongo import MongoClient
-
-client = MongoClient('localhost', 27017)
-db = client['apartments_com']
-city_pages_table = db['city_pages']
-ind_apts_table = db['individual_apartments']
-
-# Import BeautifulSoup
 import pandas as pd
 import numpy as np
 import requests
@@ -16,13 +8,18 @@ import datetime
 from pymongo import MongoClient
 import pprint
 
+client = MongoClient('localhost', 27017)
+db = client['apartments_com']
+city_pages_table = db['city_pages']
+ind_apts_table = db['individual_apartments']
+
 
 # borrowed and adapted code from Chuanxiu Xiong
 # https://github.com/chuanxiuXiong/apartments.com-scraper/blob/master/scraper.py
 request_header = {
     'User-Agent': "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134",
     }
-    
+
 # cities = ['austin-tx', 'new-york-ny', 'san-francisco-ca', 'boston-ma', 'seattle-wa', 'portland-or', 'phoenix-az', 'el-paso-tx', 'oklahoma-city-ok', 'indianapolis-in']
 
 cities = ['austin-tx', 'san-francisco-ca', 'indianapolis-in']
