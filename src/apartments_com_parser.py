@@ -24,27 +24,28 @@ request_header = {
 
 cities = ['austin-tx', 'san-francisco-ca', 'indianapolis-in']
 
-for city in cities:
-    # Iterate through all pages for a city
-    # The max number of pages appears to always be 28
-    for page in range(28):
-        base_url = "https://www.apartments.com/{}/{}/".format(city, page+1)
-        r = requests.get(base_url, headers=request_header)
-        time.sleep(np.random.randint(18, 33))
+# for city in cities:
+# Iterate through all pages for a city
+# The max number of pages appears to always be 28
+for page in range(1, 28+1):
+    base_url = "https://www.apartments.com/seattle-wa/{}/".format(page)
+    r = requests.get(base_url, headers=request_header)
+    time.sleep(np.random.randint(20, 45))
 
-        # save to mongodb
-        city_pages_table.insert_one({'city': city, 'page_number': (page+1), 'url': base_url, 'html': r.text})
+    # save to mongodb
+    city_pages_table.insert_one({'city': 'seattle-wa', 'page_number': (page), 'url': base_url, 'html': r.text})
 
-        # grab just the html for the specific apartments on the page
-        soup = BeautifulSoup(r.text, 'html.parser')
-        placards = soup.find_all('article', 'placard')
-        for idx, apt in enumerate(placards):
-            tag = placards[idx]
-            sub_page_url = tag['data-url'] 
-            listing_id = tag['data-listingid']
-            sub_page_html = requests.get(sub_page_url, headers=request_header)
-            time.sleep(np.random.randint(18, 33))
+    # grab just the html for the specific apartments on the page
+    soup = BeautifulSoup(r.text, 'html.parser')
+    placards = soup.find_all('article', 'placard')
+    for idx, apt in enumerate(placards):
+        tag = placards[idx]
+        sub_page_url = tag['data-url'] 
+        listing_id = tag['data-listingid']
+        sub_page_html = requests.get(sub_page_url, headers=request_header)
+        time.sleep(np.random.randint(25, 50))
 
-            # append sub page html to MongoDB
-            ind_apts_table.insert_one({'city': city, 'listing_id': listing_id, 'url': sub_page_url, 'html': sub_page_html.text})
+        # append sub page html to MongoDB
+        ind_apts_table.insert_one({'city': 'seattle-wa', 'listing_id': listing_id, 'url': sub_page_url, 'html': sub_page_html.text})
 
+    time.sleep(np.random.randint(10, 23))
