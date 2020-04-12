@@ -5,7 +5,7 @@ Maybe it's a Sunday morning and you want to go for a walk and grab a coffee from
 This study asks the question is the Walkscore of an apartment positively correlated with the cost per square foot of that apartment?  
 
 ## ... 
-![]  
+![](https://github.com/sn-ekstrand/walkability-and-cost/blob/master/images/austin_walkscore.png)  
 [Walkscore.com](https://www.walkscore.com/) provides a rating for any address based on how many places are nearby. These are places like cafes, resturants, banks, schools, or grocery stores. 
 
 
