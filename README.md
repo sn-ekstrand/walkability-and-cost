@@ -23,7 +23,7 @@ Data for this project was scraped from Apartments.com, which includes cost of re
 ## Statistical Test
 A t-test is used because we want to compare the means of two groups. The resulting p-value is 1.728e-08 and we reject the null hypothesis that the mean rent/SqFt is the same for both Walkscore groups. 
 
-![box plot]()
+![box plot](https://github.com/sn-ekstrand/walkability-and-cost/blob/master/images/box_plot.png)
 
 ## Future Steps
 - This study only used 482 apartments from Austin, TX. I would like to look at more cities and to gain more data from each city in general. With this we can start to compare cities and have more confidence in our analysis.  
