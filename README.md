@@ -5,8 +5,8 @@ Maybe it's a Sunday morning and you want to go for a walk and grab a coffee from
 This study asks the question is the Walkscore of an apartment positively correlated with the cost per square foot of that apartment?  
 
 ## Walkscore  
-[Walkscore.com](https://www.walkscore.com/) provides a rating for any address based on how many places are nearby. These are places like cafes, resturants, banks, schools, or grocery stores.
-![]<img align="left" width="100" src="https://github.com/sn-ekstrand/walkability-and-cost/blob/master/images/austin_walkscore.png"> 
+[Walkscore.com](https://www.walkscore.com/) provides a rating for any address based on how many places are nearby. These are places like cafes, resturants, banks, schools, or grocery stores.  
+![]<img align="center" src="https://github.com/sn-ekstrand/walkability-and-cost/blob/master/images/austin_walkscore.png"> 
 
 ## Hypotheses
 Common knowledge tells you that urban environments are more expensive than sub-urban and rural ones, and apartments are not viewed as exception.  
