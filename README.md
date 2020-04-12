@@ -41,4 +41,6 @@ A t-test is used because we want to compare the means of two groups. The resulti
 - Aside from a Walkscore, each location has a transit score and a bike score. I would like to run an analysis for each one. 
 - This test only looks at apartments but I would like to also look at houses and commercial property. 
 
-![walkscore table]()
+<p align="center">
+  <img src="https://github.com/sn-ekstrand/walkability-and-cost/blob/master/images/transit_bike.png">
+</p>
