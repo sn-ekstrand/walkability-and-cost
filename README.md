@@ -8,7 +8,7 @@ This study asks the question is the Walkscore of an apartment positively correla
 ----
 [Walkscore.com](https://www.walkscore.com/) provides a rating for any address based on how many places are nearby. These are places like cafes, resturants, banks, schools, or grocery stores.  
 <p align="center">
-  <img width="250" height="250" src="https://github.com/sn-ekstrand/walkability-and-cost/blob/master/images/austin_walkscore.png">
+  <img width="350" height="350" src="https://github.com/sn-ekstrand/walkability-and-cost/blob/master/images/austin_walkscore.png">
 </p>
 
 ## Hypotheses
@@ -23,6 +23,9 @@ Significance alpha is set at 5%.
 ## Data
 ----
 Data for this project was scraped from Apartments.com, which includes cost of rent, unit area, and a widget with [Walkscore](https://www.walkscore.com/) information. 489 apartment pages were collected. For each location, a mean rent and a mean unit area was calculated. 7 outliers based on the high rent/SqFt field were removed. 
+<p align="center">
+  <img src="https://github.com/sn-ekstrand/walkability-and-cost/blob/master/images/scatterplot.png">
+</p>
 
 ## Statistical Test
 ----
