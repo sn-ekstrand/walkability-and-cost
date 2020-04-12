@@ -1,13 +1,12 @@
 # Apartment Walkability and Cost per Square Foot
 
-Maybe it's a Sunday morning and you want to go for a walk and grab a coffee from your local cafe. Or maybe it's a Wednesday night and you need a few ingredients for dinner so you want to walk to a store. Or maybe it's a Saturday night and you're going out with friends, but you don't want to worry about finding a designated driver. Do you have the option to walk to these places? Or are you looking to get a new apartment that enables you to walk to places like these? Are you prepared to pay the increased rent or live with the small unit? 
+Maybe it's a Sunday morning and you want to go for a walk and grab a coffee from your local cafe. Or maybe it's a Wednesday night and you need a few ingredients for dinner so you want to walk to a store. Or maybe it's a Saturday night and you're going out with friends, but you don't want to worry about finding a designated driver. Do you have the option to walk to these places? Or are you looking to get a new apartment that enables you to walk to places like these? Are you prepared to pay the increased rent or live with the small unit?  
 
 This study asks the question is the Walkscore of an apartment positively correlated with the cost per square foot of that apartment?  
 
-## ... 
-![](https://github.com/sn-ekstrand/walkability-and-cost/blob/master/images/austin_walkscore.png)  
-[Walkscore.com](https://www.walkscore.com/) provides a rating for any address based on how many places are nearby. These are places like cafes, resturants, banks, schools, or grocery stores. 
-
+## Walkscore  
+[Walkscore.com](https://www.walkscore.com/) provides a rating for any address based on how many places are nearby. These are places like cafes, resturants, banks, schools, or grocery stores.
+![]<img align="left" width="100" src="https://github.com/sn-ekstrand/walkability-and-cost/blob/master/images/austin_walkscore.png"> 
 
 ## Hypotheses
 Common knowledge tells you that urban environments are more expensive than sub-urban and rural ones, and apartments are not viewed as exception.  
