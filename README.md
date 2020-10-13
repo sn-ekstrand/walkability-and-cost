@@ -13,7 +13,7 @@ This study asks the question is the Walkscore of an apartment positively correla
 
 ## Hypotheses
 ----
-Common knowledge tells you that urban environments are more expensive than sub-urban and rural ones, and apartments are not viewed as exception.  
+Many would say that urban environments are more expensive than sub-urban and rural ones.  
 
 H0: The mean rent/SqFt is the same for high Walkscore locations and low Walkscore locations.  
 Ha: The mean rent/Sqft for high Walkscore locations is higher than low Walkscore locations.  
