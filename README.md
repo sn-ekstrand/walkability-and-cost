@@ -2,7 +2,7 @@
 
 Maybe it's a Sunday morning and you want to go for a walk and grab a coffee from your local cafe. Or maybe it's a Wednesday night and you need a few ingredients for dinner so you want to walk to a store. Or maybe it's a Saturday night and you're going out with friends, but you don't want to worry about finding a designated driver. Do you have the option to walk to these places? Or are you looking to get a new apartment that enables you to walk to places like these? Are you prepared to pay the increased rent or live with the small unit?  
 
-This study asks the question is the Walkscore of an apartment positively correlated with the cost per square foot of that apartment?  
+This study asks the question: is the Walkscore of an apartment positively correlated with the cost per square foot of that apartment?  
 
 ## Walkscore  
 ----
@@ -17,7 +17,7 @@ Many would say that urban environments are more expensive than sub-urban and rur
 
 H0: The mean rent/SqFt is the same for high Walkscore locations and low Walkscore locations.  
 Ha: The mean rent/Sqft for high Walkscore locations is higher than low Walkscore locations.  
-This analysis defines a high Walkscore as anything at or above 70, a "Walker's Paradise" or "Very Walkable". "Somewhat Walkable" and "Car-dependent" are considered low Walkscores.  
+This analysis defines a high Walkscore as anything at or above 70, "Walker's Paradise" and "Very Walkable". Low Walkscores are below 70, "Somewhat Walkable" and "Car-dependent".  
 Significance alpha is set at 5%.
 
 ## Data
